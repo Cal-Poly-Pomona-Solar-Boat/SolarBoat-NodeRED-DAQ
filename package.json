@@ -3,7 +3,8 @@
     "description": "Digital Dashboard",
     "version": "0.0.1",
     "dependencies": {
-        "node-red-contrib-influxdb": "0.7.0"
+        "node-red-contrib-influxdb": "0.7.0",
+        "@flowfuse/node-red-dashboard": "1.30.2"
     },
     "node-red": {
         "settings": {
