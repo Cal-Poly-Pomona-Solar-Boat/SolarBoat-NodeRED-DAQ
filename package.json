@@ -2,7 +2,9 @@
     "name": "SolarBoatDashboard",
     "description": "Digital Dashboard",
     "version": "0.0.1",
-    "dependencies": {},
+    "dependencies": {
+        "node-red-contrib-influxdb": "0.7.0"
+    },
     "node-red": {
         "settings": {
             "flowFile": "flows.json",
