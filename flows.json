@@ -19,7 +19,7 @@
         "id": "bcd522d09ac1f881",
         "type": "tab",
         "label": "InfluxDB_Database",
-        "disabled": false,
+        "disabled": true,
         "info": "",
         "env": []
     },
@@ -27,7 +27,7 @@
         "id": "06d4226aa203027f",
         "type": "tab",
         "label": "Flow 1",
-        "disabled": true,
+        "disabled": false,
         "info": "",
         "env": []
     },
@@ -1450,7 +1450,7 @@
         "wires": [
             [
                 "a4301df346c5e0f6",
-                "69bf617bad53581e"
+                "13d7862463f106b2"
             ]
         ]
     },
@@ -1501,21 +1501,15 @@
         "wires": []
     },
     {
-        "id": "69bf617bad53581e",
-        "type": "influxdb out",
+        "id": "13d7862463f106b2",
+        "type": "Stackhero-InfluxDB-v2-write",
         "z": "06d4226aa203027f",
-        "influxdb": "dcb3fc913b139ba7",
+        "server": "4ee5305a00f257b6",
         "name": "",
-        "measurement": "machinerySensor",
-        "precision": "",
-        "retentionPolicy": "",
-        "database": "database",
-        "precisionV18FluxV20": "ms",
-        "retentionPolicyV18Flux": "",
-        "org": "CPPSolarBoat",
-        "bucket": "influx-test",
-        "x": 850,
-        "y": 180,
-        "wires": []
+        "x": 750,
+        "y": 200,
+        "wires": [
+            []
+        ]
     }
 ]
