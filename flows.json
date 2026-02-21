@@ -19,6 +19,14 @@
         "id": "bcd522d09ac1f881",
         "type": "tab",
         "label": "InfluxDB_Database",
+        "disabled": true,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "06d4226aa203027f",
+        "type": "tab",
+        "label": "Flow 1",
         "disabled": false,
         "info": "",
         "env": []
@@ -131,6 +139,14 @@
         "url": "http://192.168.4.95:8086",
         "timeout": 10,
         "rejectUnauthorized": true
+    },
+    {
+        "id": "4ee5305a00f257b6",
+        "type": "Stackhero-InfluxDB-v2-Server",
+        "name": "",
+        "host": "localhost",
+        "port": "8086",
+        "tls": false
     },
     {
         "id": "4e1fad2f0d2431d5",
@@ -1400,6 +1416,85 @@
             [
                 "17c5a902ce589425"
             ]
+        ]
+    },
+    {
+        "id": "457a4fd25e881fe1",
+        "type": "function",
+        "z": "06d4226aa203027f",
+        "name": "Mock Data",
+        "func": "msg.payload = {\n  // You bucket\n  // Optional (it can be defined in the node credentials settings)\n  bucket: 'influx-test',\n\n  // Precision of timestamp\n  // Optional\n  // Can be `ns` (nanoseconds),\n  //        `us` (microseconds),\n  //        `ms` (milliseconds),\n  //        `s` (seconds).\n  // The default is `ns`\n  // Note: if you set the `timestamp` field to `Date.now()`, you have to set the `precision` to `ms`\n  precision: 'ms',\n\n  // Data to send to InfluxDB\n  // Can be an array of objects or only one object\n  data: [\n    {\n      measurement: 'machinerySensor',\n\n      tags: {\n        deviceId: 'gyh43',\n        hardwareVersion: '1.0.2',\n        softwareVersion: '2.5.1',\n        location: 'factory-1'\n      },\n\n      fields: {\n        temperature: Math.random()*10,\n        humidity: Math.random()*20,\n        vibrations: Math.random()*12,\n        batteryVoltage: Math.random()\n      },\n\n      timestamp: Date.now()\n    },\n\n    // More data can be send here, simply re add an object\n    // { ... },\n  ]\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 260,
+        "wires": [
+            [
+                "167c5a8f49aee348",
+                "a4301df346c5e0f6"
+            ]
+        ]
+    },
+    {
+        "id": "5358e40fa998b423",
+        "type": "inject",
+        "z": "06d4226aa203027f",
+        "name": "Inject",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "10",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 180,
+        "y": 260,
+        "wires": [
+            [
+                "457a4fd25e881fe1"
+            ]
+        ]
+    },
+    {
+        "id": "a4301df346c5e0f6",
+        "type": "debug",
+        "z": "06d4226aa203027f",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 690,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "167c5a8f49aee348",
+        "type": "Stackhero-InfluxDB-v2-write",
+        "z": "06d4226aa203027f",
+        "server": "4ee5305a00f257b6",
+        "name": "local Flux",
+        "x": 680,
+        "y": 260,
+        "wires": [
+            []
         ]
     }
 ]
