@@ -164,6 +164,14 @@
         "rejectUnauthorized": true
     },
     {
+        "id": "9afdf362c7955a7b",
+        "type": "Stackhero-InfluxDB-v2-Server",
+        "name": "",
+        "host": "localhost",
+        "port": "8087",
+        "tls": true
+    },
+    {
         "id": "4e1fad2f0d2431d5",
         "type": "socketcan-out",
         "z": "a0ee866015175694",
@@ -1504,7 +1512,7 @@
         "id": "13d7862463f106b2",
         "type": "Stackhero-InfluxDB-v2-write",
         "z": "06d4226aa203027f",
-        "server": "4ee5305a00f257b6",
+        "server": "9afdf362c7955a7b",
         "name": "",
         "x": 750,
         "y": 200,
