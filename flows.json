@@ -149,6 +149,21 @@
         "tls": false
     },
     {
+        "id": "dcb3fc913b139ba7",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": 8086,
+        "protocol": "http",
+        "database": "database",
+        "name": "CPPSolarBoat",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "2.0",
+        "url": "http://localhost:8087",
+        "timeout": 10,
+        "rejectUnauthorized": true
+    },
+    {
         "id": "4e1fad2f0d2431d5",
         "type": "socketcan-out",
         "z": "a0ee866015175694",
@@ -1434,8 +1449,8 @@
         "y": 260,
         "wires": [
             [
-                "167c5a8f49aee348",
-                "a4301df346c5e0f6"
+                "a4301df346c5e0f6",
+                "69bf617bad53581e"
             ]
         ]
     },
@@ -1486,15 +1501,21 @@
         "wires": []
     },
     {
-        "id": "167c5a8f49aee348",
-        "type": "Stackhero-InfluxDB-v2-write",
+        "id": "69bf617bad53581e",
+        "type": "influxdb out",
         "z": "06d4226aa203027f",
-        "server": "4ee5305a00f257b6",
-        "name": "local Flux",
-        "x": 700,
-        "y": 260,
-        "wires": [
-            []
-        ]
+        "influxdb": "dcb3fc913b139ba7",
+        "name": "",
+        "measurement": "",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "CPPSolarBoat",
+        "bucket": "influx-test",
+        "x": 807,
+        "y": 218,
+        "wires": []
     }
 ]
