@@ -144,7 +144,7 @@
         "id": "4ee5305a00f257b6",
         "type": "Stackhero-InfluxDB-v2-Server",
         "name": "",
-        "host": "influxdb",
+        "host": "http://10.110.245.69",
         "port": "8087",
         "tls": false
     },
