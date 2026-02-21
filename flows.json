@@ -19,7 +19,7 @@
         "id": "bcd522d09ac1f881",
         "type": "tab",
         "label": "InfluxDB_Database",
-        "disabled": true,
+        "disabled": false,
         "info": "",
         "env": []
     },
@@ -27,7 +27,7 @@
         "id": "06d4226aa203027f",
         "type": "tab",
         "label": "Flow 1",
-        "disabled": false,
+        "disabled": true,
         "info": "",
         "env": []
     },
@@ -1353,24 +1353,6 @@
         "wires": []
     },
     {
-        "id": "c014740b52a3043d",
-        "type": "influxdb out",
-        "z": "bcd522d09ac1f881",
-        "influxdb": "e6f2f5b9c0b2776b",
-        "name": "",
-        "measurement": "pilot3",
-        "precision": "",
-        "retentionPolicy": "",
-        "database": "database",
-        "precisionV18FluxV20": "ms",
-        "retentionPolicyV18Flux": "",
-        "org": "CPPSolarBoat",
-        "bucket": "test1",
-        "x": 760,
-        "y": 200,
-        "wires": []
-    },
-    {
         "id": "17c5a902ce589425",
         "type": "change",
         "z": "bcd522d09ac1f881",
@@ -1400,7 +1382,7 @@
         "y": 200,
         "wires": [
             [
-                "c014740b52a3043d"
+                "67e6ad7c2b0216a1"
             ]
         ]
     },
@@ -1432,6 +1414,24 @@
                 "17c5a902ce589425"
             ]
         ]
+    },
+    {
+        "id": "67e6ad7c2b0216a1",
+        "type": "influxdb out",
+        "z": "bcd522d09ac1f881",
+        "influxdb": "dcb3fc913b139ba7",
+        "name": "",
+        "measurement": "machinerySensor",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "CPPSolarBoat",
+        "bucket": "influx-test",
+        "x": 790,
+        "y": 200,
+        "wires": []
     },
     {
         "id": "457a4fd25e881fe1",
@@ -1514,8 +1514,8 @@
         "retentionPolicyV18Flux": "",
         "org": "CPPSolarBoat",
         "bucket": "influx-test",
-        "x": 857,
-        "y": 218,
+        "x": 850,
+        "y": 180,
         "wires": []
     }
 ]
