@@ -1421,7 +1421,7 @@
         "z": "bcd522d09ac1f881",
         "influxdb": "dcb3fc913b139ba7",
         "name": "",
-        "measurement": "machinerySensor",
+        "measurement": "",
         "precision": "",
         "retentionPolicy": "",
         "database": "database",
@@ -1429,7 +1429,7 @@
         "retentionPolicyV18Flux": "",
         "org": "CPPSolarBoat",
         "bucket": "influx-test",
-        "x": 790,
+        "x": 740,
         "y": 200,
         "wires": []
     },
