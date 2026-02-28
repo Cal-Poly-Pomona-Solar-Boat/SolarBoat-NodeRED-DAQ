@@ -208,6 +208,21 @@
         "disabled": false
     },
     {
+        "id": "32dc719a9b082399",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": 8086,
+        "protocol": "http",
+        "database": "database",
+        "name": "",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "2.0",
+        "url": "http://localhost:8087",
+        "timeout": 10,
+        "rejectUnauthorized": true
+    },
+    {
         "id": "4e1fad2f0d2431d5",
         "type": "socketcan-out",
         "z": "a0ee866015175694",
@@ -1421,7 +1436,7 @@
         "y": 420,
         "wires": [
             [
-                "a71ecc90295b16b6"
+                "4278d76985440369"
             ]
         ]
     },
@@ -1430,33 +1445,18 @@
         "type": "function",
         "z": "f62291b0924f1e70",
         "name": "Vibrations",
-        "func": "msg.topic = [\n  'from(bucket: \"testBucket2\")',\n  '|> range(start: -2m)',\n  '|> filter(fn: (r) => r._measurement == \"battery\")',\n  '|> filter(fn: (r) => r._field == \"battery1_temp\")',\n  '|> last()'\n].join('\\n');\n\nreturn msg;",
+        "func": "if (Array.isArray(msg.payload) && msg.payload.length > 0) \n{\n    let row = msg.payload[0];\n\n    if (Array.isArray(row) && row.length > 0) \n    {\n        row = row[0];\n    }\n\n    if (row._value !== undefined) \n    {\n        msg.payload = Number(row._value);\n        return msg;\n    }\n\n    if (row.value !== undefined) \n    {\n        msg.payload = Number(row.value);\n        return msg;\n    }\n}\nreturn null;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 940,
+        "x": 1220,
         "y": 420,
         "wires": [
             [
-                "409ffcd87d48b634"
-            ]
-        ]
-    },
-    {
-        "id": "409ffcd87d48b634",
-        "type": "Stackhero-InfluxDB-v2-query",
-        "z": "f62291b0924f1e70",
-        "server": "9afdf362c7955a7b",
-        "name": "",
-        "x": 1150,
-        "y": 420,
-        "wires": [
-            [
-                "6b7297ca06b2cf62",
-                "398e6a7d642027b2"
+                "bfeedcacabcc3680"
             ]
         ]
     },
@@ -1497,27 +1497,27 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1460,
-        "y": 400,
+        "x": 1220,
+        "y": 300,
         "wires": []
     },
     {
-        "id": "398e6a7d642027b2",
-        "type": "function",
+        "id": "4278d76985440369",
+        "type": "influxdb in",
         "z": "f62291b0924f1e70",
-        "name": "function 17",
-        "func": "let battery = msg.payload.data[1];\n\nif (battery && battery.fields && battery.fields.battery1_temp !== undefined) {\n    msg.payload = Number(battery.fields.battery1_temp);\n} else {\n    node.warn(\"battery1_temp not found\");\n    msg.payload = null;\n}\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1390,
-        "y": 640,
+        "influxdb": "32dc719a9b082399",
+        "name": "",
+        "query": "from(bucket: \"testBucket2\")\n|> range(start: -2m)\n|> filter(fn: (r) => r._measurement == \"battery\")'\n|> filter(fn: (r) => r._field == \"battery1_temp\")'\n|> last()",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "organisation",
+        "x": 990,
+        "y": 420,
         "wires": [
             [
-                "bfeedcacabcc3680"
+                "a71ecc90295b16b6",
+                "6b7297ca06b2cf62"
             ]
         ]
     },
