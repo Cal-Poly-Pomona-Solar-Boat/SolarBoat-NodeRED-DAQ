@@ -1511,7 +1511,7 @@
         "rawOutput": false,
         "precision": "",
         "retentionPolicy": "",
-        "org": "organisation",
+        "org": "CPPSolarBoat",
         "x": 990,
         "y": 420,
         "wires": [
@@ -1619,7 +1619,7 @@
         "wires": [
             [
                 "a4301df346c5e0f6",
-                "13d7862463f106b2"
+                "2a50b22a8fe60b1f"
             ]
         ]
     },
@@ -1670,15 +1670,21 @@
         "wires": []
     },
     {
-        "id": "13d7862463f106b2",
-        "type": "Stackhero-InfluxDB-v2-write",
+        "id": "2a50b22a8fe60b1f",
+        "type": "influxdb out",
         "z": "06d4226aa203027f",
-        "server": "9afdf362c7955a7b",
+        "influxdb": "32dc719a9b082399",
         "name": "",
-        "x": 750,
-        "y": 200,
-        "wires": [
-            []
-        ]
+        "measurement": "",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "CPPSolarBoat",
+        "bucket": "testBucket2",
+        "x": 850,
+        "y": 220,
+        "wires": []
     }
 ]
