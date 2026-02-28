@@ -1441,8 +1441,7 @@
         "y": 420,
         "wires": [
             [
-                "409ffcd87d48b634",
-                "6b7297ca06b2cf62"
+                "409ffcd87d48b634"
             ]
         ]
     },
@@ -1456,6 +1455,7 @@
         "y": 420,
         "wires": [
             [
+                "6b7297ca06b2cf62",
                 "bfeedcacabcc3680"
             ]
         ]
@@ -1481,7 +1481,7 @@
         "value": "payload",
         "valueType": "msg",
         "x": 1430,
-        "y": 420,
+        "y": 500,
         "wires": []
     },
     {
@@ -1497,8 +1497,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1200,
-        "y": 560,
+        "x": 1460,
+        "y": 400,
         "wires": []
     },
     {
