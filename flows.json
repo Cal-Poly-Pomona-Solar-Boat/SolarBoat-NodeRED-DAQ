@@ -1456,24 +1456,30 @@
         "y": 420,
         "wires": [
             [
-                "c1414b527077cfc1"
+                "87a1d207fe042821"
             ]
         ]
     },
     {
-        "id": "c1414b527077cfc1",
-        "type": "debug",
+        "id": "87a1d207fe042821",
+        "type": "ui-text",
         "z": "f62291b0924f1e70",
-        "name": "msg.payload",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1450,
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "text",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": false,
+        "font": "Helvetica",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 1490,
         "y": 420,
         "wires": []
     },
