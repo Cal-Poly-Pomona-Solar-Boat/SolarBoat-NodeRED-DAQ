@@ -1478,7 +1478,7 @@
         "color": "#717171",
         "wrapText": false,
         "className": "",
-        "value": "payload[5]",
+        "value": "payload[1]",
         "valueType": "msg",
         "x": 1430,
         "y": 500,
