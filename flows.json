@@ -1505,14 +1505,14 @@
         "id": "4278d76985440369",
         "type": "influxdb in",
         "z": "f62291b0924f1e70",
-        "influxdb": "e6f2f5b9c0b2776b",
+        "influxdb": "32dc719a9b082399",
         "name": "",
         "query": "from(bucket: \"testBucket2\")\n|> range(start: -2m)\n|> filter(fn: (r) => r._measurement == \"battery\")'\n|> filter(fn: (r) => r._field == \"battery1_temp\")'\n|> last()",
         "rawOutput": false,
         "precision": "",
         "retentionPolicy": "",
         "org": "CPPSolarBoat",
-        "x": 980,
+        "x": 990,
         "y": 420,
         "wires": [
             [
