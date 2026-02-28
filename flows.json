@@ -1407,8 +1407,8 @@
             },
             {
                 "p": "topic",
-                "v": "payload",
-                "vt": "msg"
+                "v": "",
+                "vt": "date"
             }
         ],
         "repeat": "",
