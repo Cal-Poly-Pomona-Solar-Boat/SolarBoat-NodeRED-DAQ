@@ -1430,7 +1430,7 @@
         "type": "function",
         "z": "f62291b0924f1e70",
         "name": "Vibrations",
-        "func": "msg.topic = [\n  'from(bucket: \"testBucket\")',\n  '  |> range(start: -2m)',\n  '  |> filter(fn: (r) => r._measurement == \"machinerySensor\")',\n  '  |> filter(fn: (r) => r._field == \"battery1temp\")',\n];\n\nreturn msg;",
+        "func": "msg.topic = [\n  'from(bucket: \"testBucket\")',\n  '  |> range(start: -2m)',\n  '  |> filter(fn: (r) => r._measurement == \"machinerySensor\")',\n  '  |> filter(fn: (r) => r._field == \"battery1temp\")',\n  '  |> aggregateWindow(every: 1h, fn: mean)',\n  '  |> yield(name: \"mean\")',\n\n  'from(bucket: \"testBucket\")',\n  '  |> range(start: -2m)',\n  '  |> filter(fn: (r) => r._measurement == \"machinerySensor\")',\n  '  |> filter(fn: (r) => r._field == \"battery1temp\")',\n  '  |> aggregateWindow(every: 1h, fn: max)',\n  '  |> yield(name: \"max\")',\n].join('\\n');\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -1441,8 +1441,7 @@
         "y": 420,
         "wires": [
             [
-                "409ffcd87d48b634",
-                "c1414b527077cfc1"
+                "409ffcd87d48b634"
             ]
         ]
     },
@@ -1456,7 +1455,7 @@
         "y": 380,
         "wires": [
             [
-                "a389734de00eb667"
+                "c1414b527077cfc1"
             ]
         ]
     },
@@ -1497,8 +1496,8 @@
         "className": "",
         "value": "payload",
         "valueType": "msg",
-        "x": 1480,
-        "y": 380,
+        "x": 1420,
+        "y": 540,
         "wires": []
     },
     {
