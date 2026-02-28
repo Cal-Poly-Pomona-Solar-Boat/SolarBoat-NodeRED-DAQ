@@ -1407,8 +1407,7 @@
             },
             {
                 "p": "topic",
-                "v": "",
-                "vt": "date"
+                "vt": "str"
             }
         ],
         "repeat": "",
@@ -1480,7 +1479,7 @@
         "className": "",
         "value": "payload",
         "valueType": "msg",
-        "x": 1490,
+        "x": 1430,
         "y": 420,
         "wires": []
     },
