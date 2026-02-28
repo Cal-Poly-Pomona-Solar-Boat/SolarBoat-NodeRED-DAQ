@@ -1407,7 +1407,8 @@
             },
             {
                 "p": "topic",
-                "vt": "str"
+                "v": "payload",
+                "vt": "msg"
             }
         ],
         "repeat": "",
@@ -1417,7 +1418,7 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 730,
+        "x": 750,
         "y": 420,
         "wires": [
             [
@@ -1451,7 +1452,7 @@
         "z": "f62291b0924f1e70",
         "server": "9afdf362c7955a7b",
         "name": "",
-        "x": 1210,
+        "x": 1190,
         "y": 420,
         "wires": [
             [
