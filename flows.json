@@ -1430,7 +1430,7 @@
         "type": "function",
         "z": "f62291b0924f1e70",
         "name": "Vibrations",
-        "func": "msg.topic = [\n  'from(bucket: \"testBucket2\")',\n  '|> range(start: -2m)',\n  '|> filter(fn: (r) => r._measurement == \"battery\")',\n  '|> filter(fn: (r) => r._field == \"battery1_temp\")',\n  '|> yield(name: \"mean\")'\n].join('\\n');\n\nreturn msg;",
+        "func": "msg.topic = [\n  'from(bucket: \"testBucket2\")',\n  '|> range(start: -2m)',\n  '|> filter(fn: (r) => r._measurement == \"battery\")',\n  '|> filter(fn: (r) => r._field == \"battery1_temp\")',\n  '|> last()'\n].join('\\n');\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
