@@ -223,6 +223,21 @@
         "rejectUnauthorized": true
     },
     {
+        "id": "e86f499c9edb4a6d",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": 8086,
+        "protocol": "http",
+        "database": "database",
+        "name": "solarboatcpp",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "2.0",
+        "url": "http://localhost:8087",
+        "timeout": 10,
+        "rejectUnauthorized": true
+    },
+    {
         "id": "4e1fad2f0d2431d5",
         "type": "socketcan-out",
         "z": "a0ee866015175694",
@@ -1505,14 +1520,14 @@
         "id": "4278d76985440369",
         "type": "influxdb in",
         "z": "f62291b0924f1e70",
-        "influxdb": "32dc719a9b082399",
+        "influxdb": "e86f499c9edb4a6d",
         "name": "",
         "query": "from(bucket: \"testBucket2\")\n|> range(start: -2m)\n|> filter(fn: (r) => r._measurement == \"battery\")'\n|> filter(fn: (r) => r._field == \"battery1_temp\")'\n|> last()",
         "rawOutput": false,
         "precision": "",
         "retentionPolicy": "",
         "org": "CPPSolarBoat",
-        "x": 990,
+        "x": 970,
         "y": 420,
         "wires": [
             [
