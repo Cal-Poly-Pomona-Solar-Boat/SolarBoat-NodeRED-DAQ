@@ -1441,7 +1441,8 @@
         "y": 420,
         "wires": [
             [
-                "409ffcd87d48b634"
+                "409ffcd87d48b634",
+                "6b7297ca06b2cf62"
             ]
         ]
     },
@@ -1455,7 +1456,7 @@
         "y": 420,
         "wires": [
             [
-                "6b7297ca06b2cf62"
+                "bfeedcacabcc3680"
             ]
         ]
     },
@@ -1471,7 +1472,31 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1420,
+        "x": 1380,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "bfeedcacabcc3680",
+        "type": "ui-text",
+        "z": "f62291b0924f1e70",
+        "group": "90ebb2c809166208",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "text",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 1470,
         "y": 420,
         "wires": []
     },
