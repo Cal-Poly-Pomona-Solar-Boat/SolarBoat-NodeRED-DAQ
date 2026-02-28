@@ -1451,12 +1451,12 @@
         "z": "f62291b0924f1e70",
         "server": "9afdf362c7955a7b",
         "name": "",
-        "x": 1190,
+        "x": 1150,
         "y": 420,
         "wires": [
             [
                 "6b7297ca06b2cf62",
-                "bfeedcacabcc3680"
+                "398e6a7d642027b2"
             ]
         ]
     },
@@ -1500,6 +1500,26 @@
         "x": 1460,
         "y": 400,
         "wires": []
+    },
+    {
+        "id": "398e6a7d642027b2",
+        "type": "function",
+        "z": "f62291b0924f1e70",
+        "name": "function 17",
+        "func": "if (msg.payload && msg.payload.length > 0) {\n    msg.payload = Number(msg.payload[0]._value);\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1390,
+        "y": 640,
+        "wires": [
+            [
+                "bfeedcacabcc3680"
+            ]
+        ]
     },
     {
         "id": "17c5a902ce589425",
