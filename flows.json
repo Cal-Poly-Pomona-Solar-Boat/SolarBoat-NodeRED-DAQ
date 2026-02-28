@@ -1688,7 +1688,7 @@
         "id": "2a50b22a8fe60b1f",
         "type": "influxdb out",
         "z": "06d4226aa203027f",
-        "influxdb": "dcb3fc913b139ba7",
+        "influxdb": "e86f499c9edb4a6d",
         "name": "",
         "measurement": "battery",
         "precision": "",
