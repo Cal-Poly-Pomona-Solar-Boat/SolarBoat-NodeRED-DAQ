@@ -1675,7 +1675,7 @@
         "z": "06d4226aa203027f",
         "influxdb": "32dc719a9b082399",
         "name": "",
-        "measurement": "",
+        "measurement": "battery",
         "precision": "",
         "retentionPolicy": "",
         "database": "database",
@@ -1683,7 +1683,7 @@
         "retentionPolicyV18Flux": "",
         "org": "CPPSolarBoat",
         "bucket": "testBucket2",
-        "x": 850,
+        "x": 880,
         "y": 220,
         "wires": []
     }
