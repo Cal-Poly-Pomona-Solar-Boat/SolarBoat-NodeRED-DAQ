@@ -1551,7 +1551,7 @@
             },
             {
                 "t": "set",
-                "p": "payload",
+                "p": "measurement",
                 "pt": "msg",
                 "to": "$append(fields,tags)",
                 "tot": "jsonata"
@@ -1603,9 +1603,9 @@
         "id": "67e6ad7c2b0216a1",
         "type": "influxdb out",
         "z": "bcd522d09ac1f881",
-        "influxdb": "dcb3fc913b139ba7",
+        "influxdb": "32dc719a9b082399",
         "name": "",
-        "measurement": "msg.measurement",
+        "measurement": "",
         "precision": "",
         "retentionPolicy": "",
         "database": "database",
@@ -1613,7 +1613,7 @@
         "retentionPolicyV18Flux": "",
         "org": "CPPSolarBoat",
         "bucket": "testBucket2",
-        "x": 800,
+        "x": 750,
         "y": 200,
         "wires": []
     },
