@@ -1452,7 +1452,7 @@
         "server": "9afdf362c7955a7b",
         "name": "",
         "x": 1210,
-        "y": 380,
+        "y": 420,
         "wires": [
             [
                 "c1414b527077cfc1"
@@ -1472,8 +1472,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1190,
-        "y": 460,
+        "x": 1450,
+        "y": 420,
         "wires": []
     },
     {
