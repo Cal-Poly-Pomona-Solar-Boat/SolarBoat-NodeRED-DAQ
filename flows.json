@@ -1361,6 +1361,111 @@
         "wires": []
     },
     {
+        "id": "d52dede140c87c9b",
+        "type": "inject",
+        "z": "f62291b0924f1e70",
+        "name": "Inject",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 730,
+        "y": 420,
+        "wires": [
+            [
+                "a71ecc90295b16b6"
+            ]
+        ]
+    },
+    {
+        "id": "a71ecc90295b16b6",
+        "type": "function",
+        "z": "f62291b0924f1e70",
+        "name": "Vibrations",
+        "func": "msg.topic = [\n  'from(bucket: \"myBucket\")',\n  '  |> range(start: -5m)',\n  '  |> filter(fn: (r) => r._measurement == \"machinerySensor\")',\n  '  |> filter(fn: (r) => r._field == \"vibrations\")',\n].join('\\n');\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 940,
+        "y": 420,
+        "wires": [
+            [
+                "409ffcd87d48b634",
+                "c1414b527077cfc1"
+            ]
+        ]
+    },
+    {
+        "id": "409ffcd87d48b634",
+        "type": "Stackhero-InfluxDB-v2-query",
+        "z": "f62291b0924f1e70",
+        "server": "9afdf362c7955a7b",
+        "name": "",
+        "x": 1210,
+        "y": 380,
+        "wires": [
+            [
+                "a389734de00eb667"
+            ]
+        ]
+    },
+    {
+        "id": "c1414b527077cfc1",
+        "type": "debug",
+        "z": "f62291b0924f1e70",
+        "name": "msg.payload",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1190,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "a389734de00eb667",
+        "type": "ui-text",
+        "z": "f62291b0924f1e70",
+        "group": "90ebb2c809166208",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "Vibrations",
+        "label": "Vibrations",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 1480,
+        "y": 380,
+        "wires": []
+    },
+    {
         "id": "17c5a902ce589425",
         "type": "change",
         "z": "bcd522d09ac1f881",
