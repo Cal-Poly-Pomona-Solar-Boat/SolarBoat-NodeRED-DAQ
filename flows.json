@@ -1506,7 +1506,7 @@
         "type": "function",
         "z": "f62291b0924f1e70",
         "name": "function 17",
-        "func": "if (msg.payload && msg.payload.length > 0) {\n    msg.payload = Number(msg.payload[0]._value);\n}\nreturn msg;",
+        "func": "let battery = msg.payload.data[1];\n\nif (battery && battery.fields && battery.fields.battery1_temp !== undefined) {\n    msg.payload = Number(battery.fields.battery1_temp);\n} else {\n    node.warn(\"battery1_temp not found\");\n    msg.payload = null;\n}\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
