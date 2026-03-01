@@ -1,9 +1,2 @@
-SolarBoatDashboard
-==================
-
-Digital Dashboard
-
-### About
-
-This is your project's README.md file. It helps users understand what your
-project does, how to use it and anything else they may need to know.
+# SolarBoat-DAQ
+Real-time CAN bus DAQ system for marine use — decodes FDCAN data, displays live sensor data on Node-RED Dashboard 2.0, and stores long-term data to InfluxDB with edge-to-home server replication.
