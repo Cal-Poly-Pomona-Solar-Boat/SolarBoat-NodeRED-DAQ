@@ -27,7 +27,7 @@
         "id": "06d4226aa203027f",
         "type": "tab",
         "label": "Flow 1",
-        "disabled": false,
+        "disabled": true,
         "info": "",
         "env": []
     },
