@@ -1500,23 +1500,6 @@
         "wires": []
     },
     {
-        "id": "6b7297ca06b2cf62",
-        "type": "debug",
-        "z": "f62291b0924f1e70",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1220,
-        "y": 300,
-        "wires": []
-    },
-    {
         "id": "4278d76985440369",
         "type": "influxdb in",
         "z": "f62291b0924f1e70",
@@ -1531,8 +1514,7 @@
         "y": 420,
         "wires": [
             [
-                "a71ecc90295b16b6",
-                "6b7297ca06b2cf62"
+                "a71ecc90295b16b6"
             ]
         ]
     },
