@@ -3004,5 +3004,112 @@
         "x": 670,
         "y": 440,
         "wires": []
+    },
+    {
+        "id": "1d5e3fa638609392",
+        "type": "pimcp3008",
+        "z": "f6ce0af4b3f21950",
+        "name": "",
+        "dev": "3008",
+        "pin": "0",
+        "dnum": "0",
+        "bus": "1",
+        "x": 400,
+        "y": 820,
+        "wires": [
+            [
+                "c50c89900aee1a3c"
+            ]
+        ]
+    },
+    {
+        "id": "cd2d3bae3a099c91",
+        "type": "pimcp3008",
+        "z": "f6ce0af4b3f21950",
+        "name": "",
+        "dev": "3008",
+        "pin": "1",
+        "dnum": "0",
+        "bus": "1",
+        "x": 140,
+        "y": 860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f75a7c5767055152",
+        "type": "pimcp3008",
+        "z": "f6ce0af4b3f21950",
+        "name": "",
+        "dev": "3008",
+        "pin": "2",
+        "dnum": "0",
+        "bus": "1",
+        "x": 140,
+        "y": 900,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "abb7dc0b98b9d679",
+        "type": "pimcp3008",
+        "z": "f6ce0af4b3f21950",
+        "name": "",
+        "dev": "3008",
+        "pin": "3",
+        "dnum": "0",
+        "bus": "1",
+        "x": 140,
+        "y": 940,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "68edb6b35a6e8cfe",
+        "type": "inject",
+        "z": "f6ce0af4b3f21950",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 820,
+        "wires": [
+            [
+                "1d5e3fa638609392"
+            ]
+        ]
+    },
+    {
+        "id": "c50c89900aee1a3c",
+        "type": "debug",
+        "z": "f6ce0af4b3f21950",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 820,
+        "wires": []
     }
 ]
