@@ -1471,33 +1471,9 @@
         "y": 420,
         "wires": [
             [
-                "bfeedcacabcc3680"
+                "10ac47bb5f6696da"
             ]
         ]
-    },
-    {
-        "id": "bfeedcacabcc3680",
-        "type": "ui-text",
-        "z": "f62291b0924f1e70",
-        "group": "90ebb2c809166208",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "text",
-        "format": "{{msg.payload}}",
-        "layout": "row-left",
-        "style": false,
-        "font": "",
-        "fontSize": 16,
-        "color": "#717171",
-        "wrapText": false,
-        "className": "",
-        "value": "payload",
-        "valueType": "msg",
-        "x": 1430,
-        "y": 500,
-        "wires": []
     },
     {
         "id": "4278d76985440369",
@@ -1517,6 +1493,30 @@
                 "a71ecc90295b16b6"
             ]
         ]
+    },
+    {
+        "id": "10ac47bb5f6696da",
+        "type": "ui-text",
+        "z": "f62291b0924f1e70",
+        "group": "90ebb2c809166208",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "text",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 1490,
+        "y": 400,
+        "wires": []
     },
     {
         "id": "17c5a902ce589425",
