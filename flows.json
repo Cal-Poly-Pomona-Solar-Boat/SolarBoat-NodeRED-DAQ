@@ -266,7 +266,7 @@
         "name": "socketcan-out",
         "config": "a5c7b9ff1ed4302e",
         "x": 210,
-        "y": 120,
+        "y": 140,
         "wires": [
             [
                 "c3b925e5cd27f4ad"
