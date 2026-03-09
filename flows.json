@@ -322,7 +322,7 @@
         "type": "function",
         "z": "a0ee866015175694",
         "name": "See_FDCAN_ID_as_HEX",
-        "func": "msg.payload.canid = '0x' + msg.payload.id.toString(16).toUpperCase();\nreturn msg;",
+        "func": "node.warn(JSON.stringify(msg));\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
