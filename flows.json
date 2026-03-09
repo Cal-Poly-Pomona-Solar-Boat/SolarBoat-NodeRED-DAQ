@@ -27,7 +27,7 @@
         "id": "06d4226aa203027f",
         "type": "tab",
         "label": "Flow 1",
-        "disabled": false,
+        "disabled": true,
         "info": "",
         "env": []
     },
@@ -35,7 +35,7 @@
         "id": "f6ce0af4b3f21950",
         "type": "tab",
         "label": "BoatDashboard",
-        "disabled": false,
+        "disabled": true,
         "info": "",
         "env": []
     },
@@ -1446,98 +1446,6 @@
         "valueType": "msg",
         "x": 590,
         "y": 380,
-        "wires": []
-    },
-    {
-        "id": "d52dede140c87c9b",
-        "type": "inject",
-        "z": "f62291b0924f1e70",
-        "name": "Inject",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 750,
-        "y": 420,
-        "wires": [
-            [
-                "4278d76985440369"
-            ]
-        ]
-    },
-    {
-        "id": "a71ecc90295b16b6",
-        "type": "function",
-        "z": "f62291b0924f1e70",
-        "name": "Vibrations",
-        "func": "if (Array.isArray(msg.payload) && msg.payload.length > 0) \n{\n    let row = msg.payload[0];\n\n    if (Array.isArray(row) && row.length > 0) \n    {\n        row = row[0];\n    }\n\n    if (row._value !== undefined) \n    {\n        msg.payload = Number(row._value);\n        return msg;\n    }\n\n    if (row.value !== undefined) \n    {\n        msg.payload = Number(row.value);\n        return msg;\n    }\n}\nreturn null;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1220,
-        "y": 420,
-        "wires": [
-            [
-                "10ac47bb5f6696da"
-            ]
-        ]
-    },
-    {
-        "id": "4278d76985440369",
-        "type": "influxdb in",
-        "z": "f62291b0924f1e70",
-        "influxdb": "e86f499c9edb4a6d",
-        "name": "",
-        "query": "from(bucket: \"testBucket2\")\n|> range(start: -2m)\n|> filter(fn: (r) => r._measurement == \"battery\")'\n|> filter(fn: (r) => r._field == \"battery1_temp\")'\n|> last()",
-        "rawOutput": false,
-        "precision": "",
-        "retentionPolicy": "",
-        "org": "CPPSolarBoat",
-        "x": 970,
-        "y": 420,
-        "wires": [
-            [
-                "a71ecc90295b16b6"
-            ]
-        ]
-    },
-    {
-        "id": "10ac47bb5f6696da",
-        "type": "ui-text",
-        "z": "f62291b0924f1e70",
-        "group": "90ebb2c809166208",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "text",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "style": false,
-        "font": "",
-        "fontSize": 16,
-        "color": "#717171",
-        "wrapText": false,
-        "className": "",
-        "value": "payload",
-        "valueType": "msg",
-        "x": 1490,
-        "y": 400,
         "wires": []
     },
     {
