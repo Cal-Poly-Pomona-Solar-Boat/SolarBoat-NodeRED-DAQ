@@ -322,7 +322,7 @@
         "type": "function",
         "z": "a0ee866015175694",
         "name": "See_FDCAN_ID_as_HEX",
-        "func": "if (msg.payload.canid !== undefined) {\n    msg.payload.canid = '0x' + msg.payload.canid.toString(16).toUpperCase();\n}\nreturn msg;",
+        "func": "// Decode incoming CAN frames from STM32\nmsg.result = {};\n\nconst id = msg.payload.canid;\nconst data = msg.payload.data;\n\nswitch (id) {\n\n    case \"0x0\":  // AS5600 steering angle\n        // [0-1] deg x10 as uint16, big-endian\n        let deg_int = (data[0] << 8) | data[1];\n        let degrees = deg_int / 10.0;\n        msg.result = {\n            frame: \"0x000\",\n            sensor: \"AS5600\",\n            degrees: degrees\n        };\n        break;\n\n    case \"0x1\":  // dummy frame\n        msg.result = {\n            frame: \"0x001\",\n            sensor: \"dummy\",\n            raw: [data[0].toString(16).toUpperCase(),\n                  data[1].toString(16).toUpperCase()]\n        };\n        break;\n\n    default:\n        msg.result = {\n            frame: id,\n            sensor: \"unknown\"\n        };\n        break;\n}\n\nmsg.payload = msg.result;\nreturn msg;\n\n\n\n// **What it does:**\n\n// For `0x0` it reconstructs the uint16 from the two bytes and divides by 10 to get back the float degrees — so `0x0E 0x0F` → `3599` → `359.9`.\n\n// For `0x1` it just shows the raw hex bytes confirming the dummy frame.\n\n// **In Node-RED**, wire it like this:\n// ```\n// socketcan-in → function (this code) → debug",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
