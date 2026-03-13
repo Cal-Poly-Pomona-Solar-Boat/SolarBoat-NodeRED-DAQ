@@ -333,9 +333,24 @@
         "y": 140,
         "wires": [
             [
-                "bd46c3cce38de69d"
+                "bd46c3cce38de69d",
+                "3e88c9c9616022c2"
             ]
         ]
+    },
+    {
+        "id": "3e88c9c9616022c2",
+        "type": "link out",
+        "z": "a0ee866015175694",
+        "name": "AS5600 angle",
+        "mode": "link",
+        "links": [
+            "e5fc8d99447198cf"
+        ],
+        "x": 740,
+        "y": 220,
+        "wires": [],
+        "l": true
     },
     {
         "id": "8b52e4caa2337620",
@@ -1469,6 +1484,77 @@
         "wires": []
     },
     {
+        "id": "59e126251b80f92b",
+        "type": "ui-gauge",
+        "z": "f62291b0924f1e70",
+        "name": "SteeringAngle",
+        "group": "6db9f9b4ba633596",
+        "order": 1,
+        "value": "payload.degrees",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "Steering Angle",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "deg",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "180",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "360",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "360",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 420,
+        "y": 840,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e5fc8d99447198cf",
+        "type": "link in",
+        "z": "f62291b0924f1e70",
+        "name": "AS5600 angle",
+        "links": [
+            "3e88c9c9616022c2"
+        ],
+        "x": 210,
+        "y": 840,
+        "wires": [
+            [
+                "59e126251b80f92b"
+            ]
+        ],
+        "l": true
+    },
+    {
         "id": "17c5a902ce589425",
         "type": "change",
         "z": "bcd522d09ac1f881",
@@ -1765,7 +1851,7 @@
         "z": "f6ce0af4b3f21950",
         "name": "Rudder input",
         "group": "6db9f9b4ba633596",
-        "order": 1,
+        "order": 2,
         "value": "payload",
         "valueType": "msg",
         "width": 3,
@@ -1827,7 +1913,7 @@
         "z": "f6ce0af4b3f21950",
         "name": "Rudder postion",
         "group": "6db9f9b4ba633596",
-        "order": 2,
+        "order": 3,
         "value": "payload",
         "valueType": "msg",
         "width": 3,
@@ -1868,7 +1954,7 @@
         "type": "ui-text",
         "z": "f6ce0af4b3f21950",
         "group": "6db9f9b4ba633596",
-        "order": 10,
+        "order": 11,
         "width": 2,
         "height": 0,
         "name": "Battery1 Temp",
@@ -1941,7 +2027,7 @@
         "type": "ui-text",
         "z": "f6ce0af4b3f21950",
         "group": "6db9f9b4ba633596",
-        "order": 8,
+        "order": 9,
         "width": "3",
         "height": "3",
         "name": "Power Produced",
@@ -2014,7 +2100,7 @@
         "type": "ui-text",
         "z": "f6ce0af4b3f21950",
         "group": "6db9f9b4ba633596",
-        "order": 4,
+        "order": 5,
         "width": "3",
         "height": "3",
         "name": "Motor L Power Draw",
@@ -2087,7 +2173,7 @@
         "type": "ui-text",
         "z": "f6ce0af4b3f21950",
         "group": "6db9f9b4ba633596",
-        "order": 6,
+        "order": 7,
         "width": "3",
         "height": "3",
         "name": "Motor R Power Draw",
@@ -2160,7 +2246,7 @@
         "type": "ui-text",
         "z": "f6ce0af4b3f21950",
         "group": "6db9f9b4ba633596",
-        "order": 5,
+        "order": 6,
         "width": "3",
         "height": "3",
         "name": "Avg Motor power draw",
@@ -2358,7 +2444,7 @@
         "type": "ui-text",
         "z": "f6ce0af4b3f21950",
         "group": "6db9f9b4ba633596",
-        "order": 12,
+        "order": 13,
         "width": 2,
         "height": 0,
         "name": "Battery3 Temp",
@@ -2431,7 +2517,7 @@
         "type": "ui-text",
         "z": "f6ce0af4b3f21950",
         "group": "6db9f9b4ba633596",
-        "order": 13,
+        "order": 14,
         "width": 2,
         "height": 0,
         "name": "Battery4 Temp",
@@ -2504,7 +2590,7 @@
         "type": "ui-text",
         "z": "f6ce0af4b3f21950",
         "group": "6db9f9b4ba633596",
-        "order": 14,
+        "order": 15,
         "width": 2,
         "height": 0,
         "name": "Battery5 Temp",
@@ -2577,7 +2663,7 @@
         "type": "ui-text",
         "z": "f6ce0af4b3f21950",
         "group": "6db9f9b4ba633596",
-        "order": 15,
+        "order": 16,
         "width": 2,
         "height": 0,
         "name": "Battery6 Temp",
@@ -2650,7 +2736,7 @@
         "type": "ui-text",
         "z": "f6ce0af4b3f21950",
         "group": "6db9f9b4ba633596",
-        "order": 16,
+        "order": 17,
         "width": 3,
         "height": 0,
         "name": "Panel Temp:",
@@ -2725,7 +2811,7 @@
         "group": "6db9f9b4ba633596",
         "name": "Battery temperatures",
         "label": "Battery Temperatures",
-        "order": 11,
+        "order": 12,
         "chartType": "bar",
         "category": "series",
         "categoryType": "property",
@@ -2806,7 +2892,7 @@
         "z": "f6ce0af4b3f21950",
         "name": "Motor L  Speed",
         "group": "6db9f9b4ba633596",
-        "order": 7,
+        "order": 8,
         "width": "2",
         "height": "2",
         "min": 0,
@@ -2849,7 +2935,7 @@
         "z": "f6ce0af4b3f21950",
         "name": "Motor R  Speed",
         "group": "6db9f9b4ba633596",
-        "order": 3,
+        "order": 4,
         "width": "2",
         "height": "2",
         "min": 0,
@@ -2892,7 +2978,7 @@
         "z": "f6ce0af4b3f21950",
         "name": "RPM",
         "group": "6db9f9b4ba633596",
-        "order": 9,
+        "order": 10,
         "width": "2",
         "height": "2",
         "min": 0,
