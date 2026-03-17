@@ -342,12 +342,12 @@
         "id": "3e88c9c9616022c2",
         "type": "link out",
         "z": "a0ee866015175694",
-        "name": "AS5600 angle",
+        "name": "AS5600_1",
         "mode": "link",
         "links": [
             "e5fc8d99447198cf"
         ],
-        "x": 740,
+        "x": 730,
         "y": 220,
         "wires": [],
         "l": true
@@ -1541,11 +1541,11 @@
         "id": "e5fc8d99447198cf",
         "type": "link in",
         "z": "f62291b0924f1e70",
-        "name": "AS5600 angle",
+        "name": "AS5600_1",
         "links": [
             "3e88c9c9616022c2"
         ],
-        "x": 210,
+        "x": 200,
         "y": 840,
         "wires": [
             [
