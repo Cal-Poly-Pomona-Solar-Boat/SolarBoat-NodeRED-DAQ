@@ -1726,7 +1726,7 @@
         "name": "RPM",
         "group": "6db9f9b4ba633596",
         "order": 0,
-        "value": "payload",
+        "value": "payload.rpm",
         "valueType": "msg",
         "width": 3,
         "height": 3,
