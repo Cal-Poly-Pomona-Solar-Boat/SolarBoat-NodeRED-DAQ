@@ -1611,7 +1611,9 @@
             [
                 "3db94bad9135ec2c"
             ],
-            [],
+            [
+                "472cf0715c6be2d7"
+            ],
             []
         ]
     },
@@ -1713,6 +1715,60 @@
         "className": "",
         "x": 600,
         "y": 980,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "472cf0715c6be2d7",
+        "type": "ui-gauge",
+        "z": "f62291b0924f1e70",
+        "name": "RPM",
+        "group": "6db9f9b4ba633596",
+        "order": 0,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "gauge",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "units",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "4",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "7",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": 10,
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 590,
+        "y": 1040,
         "wires": [
             []
         ]
