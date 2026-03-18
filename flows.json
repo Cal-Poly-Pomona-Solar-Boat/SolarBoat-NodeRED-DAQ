@@ -1737,7 +1737,7 @@
         "title": "rpm",
         "alwaysShowTitle": false,
         "floatingTitlePosition": "top-left",
-        "units": "units",
+        "units": "RPM",
         "icon": "",
         "prefix": "",
         "suffix": "",
