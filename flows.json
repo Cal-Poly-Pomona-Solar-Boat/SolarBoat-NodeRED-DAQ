@@ -1606,7 +1606,7 @@
                 "e1cc25fa0f632bc6"
             ],
             [
-                "e72ac2ef453ded84"
+                "62bbf8e706a34764"
             ],
             [],
             [],
@@ -1668,63 +1668,25 @@
         ]
     },
     {
-        "id": "e72ac2ef453ded84",
-        "type": "ui-chart",
+        "id": "62bbf8e706a34764",
+        "type": "ui-template",
         "z": "f62291b0924f1e70",
         "group": "6db9f9b4ba633596",
+        "page": "",
+        "ui": "",
         "name": "",
-        "label": "chart",
-        "order": 9007199254740991,
-        "chartType": "line",
-        "category": "topic",
-        "categoryType": "msg",
-        "xAxisLabel": "",
-        "xAxisProperty": "",
-        "xAxisPropertyType": "timestamp",
-        "xAxisType": "time",
-        "xAxisFormat": "",
-        "xAxisFormatType": "auto",
-        "xmin": "",
-        "xmax": "",
-        "yAxisLabel": "",
-        "yAxisProperty": "payload",
-        "yAxisPropertyType": "msg",
-        "ymin": "",
-        "ymax": "",
-        "bins": 10,
-        "action": "append",
-        "stackSeries": false,
-        "pointShape": "circle",
-        "pointRadius": 4,
-        "showLegend": true,
-        "removeOlder": 1,
-        "removeOlderUnit": "3600",
-        "removeOlderPoints": "",
-        "colors": [
-            "#0095ff",
-            "#ff0000",
-            "#ff7f0e",
-            "#2ca02c",
-            "#a347e1",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "textColor": [
-            "#666666"
-        ],
-        "textColorDefault": true,
-        "gridColor": [
-            "#e5e5e5"
-        ],
-        "gridColorDefault": true,
-        "width": 6,
-        "height": 8,
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>\n    <div style=\"padding: 10px;\">\n        <h3>ADXL345 #1 — Motor 1 Vibration</h3>\n        <div style=\"display:flex; gap:30px; justify-content:center; margin-top:10px;\">\n            <div style=\"text-align:center;\">\n                <div style=\"color:red; font-weight:bold;\">X</div>\n                <div style=\"font-size:1.5em;\">{{ msg.payload.x_g }} g</div>\n            </div>\n            <div style=\"text-align:center;\">\n                <div style=\"color:green; font-weight:bold;\">Y</div>\n                <div style=\"font-size:1.5em;\">{{ msg.payload.y_g }} g</div>\n            </div>\n            <div style=\"text-align:center;\">\n                <div style=\"color:blue; font-weight:bold;\">Z</div>\n                <div style=\"font-size:1.5em;\">{{ msg.payload.z_g }} g</div>\n            </div>\n        </div>\n    </div>\n</template>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
         "className": "",
-        "interpolation": "linear",
-        "x": 610,
-        "y": 940,
+        "x": 600,
+        "y": 920,
         "wires": [
             []
         ]
