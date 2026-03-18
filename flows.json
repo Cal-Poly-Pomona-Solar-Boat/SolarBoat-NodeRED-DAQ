@@ -1487,7 +1487,7 @@
         "id": "59e126251b80f92b",
         "type": "ui-gauge",
         "z": "f62291b0924f1e70",
-        "name": "SteeringAngle",
+        "name": "SteeringAngle1",
         "group": "6db9f9b4ba633596",
         "order": 2,
         "value": "payload.degrees",
